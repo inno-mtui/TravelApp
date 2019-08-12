@@ -38,12 +38,12 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
         mChildListener = new ChildEventListener() {
             @Override
             public void onChildAdded( DataSnapshot dataSnapshot, String s) {
-                // TravelDeals td = dataSnapshot.getValue(TravelDeals.class);
-//                assert td != null;
-//                Log.i("Deal: ", td.getTille());
-//                td.setId(dataSnapshot.getKey());
-                // deals.add(td);
-//                notifyItemInserted(deals.size() - 1);
+                TravelDeals td = dataSnapshot.getValue(TravelDeals.class);
+               assert td != null;
+               Log.i("Deal: ", td.getTille());
+               td.setId(dataSnapshot.getKey());
+                deals.add(td);
+               notifyItemInserted(deals.size() - 1);
             }
 
             @Override
